@@ -30,6 +30,7 @@
         android:inputType="phone" />
 
     <Button
+        android:id="@+id/btnchoose"
         android:layout_centerInParent="true"
         android:layout_width="100dp"
         android:layout_height="80dp"
