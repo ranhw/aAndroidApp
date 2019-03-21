@@ -26,11 +26,6 @@
         <activity
             android:name="com.example.ranhaowen.hellowworld.LoopActivity"
             android:label="新界面" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <meta-data

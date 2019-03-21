@@ -24,6 +24,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.example.ranhaowen.hellowworld.LoopActivity"
+            android:label="新界面" >
+        </activity>
 
         <meta-data
             android:name="android.support.VERSION"

@@ -1,10 +1,9 @@
 package com.example.ranhaowen.hellowworld;
 
 import android.content.Intent;
-import android.os.PersistableBundle;
-import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
@@ -17,13 +16,18 @@ import static java.lang.System.exit;
 
 public class MainActivity extends AppCompatActivity {
 
+    public static final String TAG = "[hello]MainActivity: ";
+
     private Button btnchoose;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.d (TAG, " onCreate in");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toast.makeText(getApplicationContext(), "onCreat()", Toast.LENGTH_SHORT).show();
+        Log.d (TAG, " onCreate out");
         btnchoose = (Button)findViewById(R.id.btnchoose);
+        Log.d (TAG, " Click in");
         btnchoose.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent it = new Intent(MainActivity.this,LoopActivity.class);
@@ -31,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
                 setContentView(R.layout.activity_loops);
             }
         });
+
         Toast.makeText(getApplicationContext(), "onStart()", Toast.LENGTH_SHORT).show();
     }
 
@@ -50,9 +55,9 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "再按一次退出程序",
                         Toast.LENGTH_SHORT).show();
                 mHandler.sendEmptyMessageDelayed(0, 2000);
-                Toast.makeText(getApplicationContext(), "onDestory()", Toast.LENGTH_SHORT).show();
             } else {
-                exit(0);
+                exit(R.layout.activity_main);
+                Toast.makeText(getApplicationContext(), "onDestory()", Toast.LENGTH_SHORT).show();
             }
             return false;
         }
